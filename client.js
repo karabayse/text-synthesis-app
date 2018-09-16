@@ -39,3 +39,24 @@ getVoices();
 if(synth.onvoiceschanged !== undefined) {
   synth.onvoiceschanged = getVoices;
 }
+
+// Speak
+const speak = () => {
+  // Check if speaking
+  if(synth.speaking) {
+    console.error('Already speaking...');
+    return;
+  }
+  if(textInput.value !== '') {
+    // Get speak text
+    const speakText = new SpeechSynthesisUtterance(textInput.value);
+    // Speak end
+    speakText.onend = e => {
+      console.log('Done speaking');
+    };
+    // Speak error
+    SpeakText.onerror = e => {
+      console.error('Something went wrong');
+    };
+  }
+};
