@@ -58,5 +58,16 @@ const speak = () => {
     SpeakText.onerror = e => {
       console.error('Something went wrong');
     };
+    // Selected voice
+    const selectedVoice = voiceSelect.selectedOptions[0].getAttribute('data-name');
+    // Loop through voices
+    voices.forEach(voice => {
+      if(voice.name === selectedVoice) {
+        speakText.voice = voice;
+      }
+    });
+    // Set pitch and rate
+    speakText.rate = rate.value;
+    speakText.pitch = pitch.value;
   }
 };
