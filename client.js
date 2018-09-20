@@ -89,3 +89,6 @@ rate.addEventListener('change', e => rateValue.textContent = rate.value);
 
 // Pitche Value Change
 pitch.addEventListener('change', e => pitchValue.textContent = pitch.value);
+
+// Voice Select Change
+voiceSelect.addEventListener('change', e => speak());
