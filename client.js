@@ -44,7 +44,7 @@ if(synth.onvoiceschanged !== undefined) {
 // Speak
 const speak = () => {
   // Add background animation
-  body.style.background = '#B0C4DE url(./images/wavelength.webp)';
+  body.style.background = '#B0C4DE url(./images/energy-frequency.gif)';
   // Repeat horizonally on the x-axis
   body.style.backgroundRepeat = 'repeat-x';
   body.style.backgroundSize = '100% 100%';
