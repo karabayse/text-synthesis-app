@@ -9,6 +9,7 @@ const rate = document.querySelector('#rate');
 const rateValue = document.querySelector('#rate-value');
 const pitch = document.querySelector('#pitch');
 const pitchValue = document.querySelector('#pitch-value');
+const body = document.querySelector('body');
 
 // Initialize Voices Array
 let voices = [];
@@ -42,6 +43,11 @@ if(synth.onvoiceschanged !== undefined) {
 
 // Speak
 const speak = () => {
+  // Add background animation
+  body.style.background = '#B0C4DE url(./images/wavelength.webp)';
+  // Repeat horizonally on the x-axis
+  body.style.backgroundRepeat = 'repeat-x';
+  body.style.backgroundSize = '100% 100%';
   // Check if speaking
   if(synth.speaking) {
     console.error('Already speaking...');
@@ -55,7 +61,7 @@ const speak = () => {
       console.log('Done speaking');
     };
     // Speak error
-    SpeakText.onerror = e => {
+    speakText.onerror = e => {
       console.error('Something went wrong');
     };
     // Selected voice
